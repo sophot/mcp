@@ -2,20 +2,22 @@ from smolagents import ToolCollection, CodeAgent
 from smolagents.mcp_client import MCPClient
 from mcp.client.stdio import StdioServerParameters
 
-server_params = StdioServerParameters(command="uv", args=["run", "main.py"])
+server_params = [
+    StdioServerParameters(command="uv", args=["run", "server.py"]),
+    StdioServerParameters(command="uv", args=["run", "server.py"])
+]
 
 mcp_client = MCPClient(server_params)
 tools = mcp_client.get_tools()
 
 print(tools)
 print()
-print(dir(tools[0]))
-print()
-print(tools[0].name)
-print(tools[0].inputs)
-print(tools[0].output_type)
-print(tools[0].description)
-print(tools[0]._get_tool_code())
+for tool in tools:
+    print(f'Tool name: "{tool.name}"')
+    print(f'Tool inputs: "{tool.inputs}"')
+    print(f'Tool output type: "{tool.output_type}"')
+    print(f'Tool description: "{tool.description}"')
+    print()
 
 # with ToolCollection.from_mcp(server_params, trust_remote_code=True) as tools:
 #     print(tools)

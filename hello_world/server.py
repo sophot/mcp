@@ -4,12 +4,12 @@ mcp = FastMCP(name="hello-world")
 
 @mcp.tool()
 def greet_tool(name: str):
-    """This is a tool that greets a name
-    
+    """
+    This is a tool that greets a name
     Args:
         name: The name to greet
     """
-    return f"Hello {name} from Tool!"
+    return f"Hello {name} from Tool! LFG!!!"
 
 @mcp.resource("greet://{name}")
 def greet_resource_template(name: str):
