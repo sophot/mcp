@@ -1,20 +1,52 @@
 ## Setup
-1. Sync dependencies and update lockfile.
+**1. Sync dependencies and update lockfile.**
 
 ```bash
-uv sync
+$ uv sync
 ```
 
-2. Activate an independent environment to work with.
+**2. Activate an independent environment to work with.**
 
 ```bash
-source .venv/bin/activate
+$ source .venv/bin/activate
 ```
 
-3. Run a simple client code that connect to our MCP server created at [server.py](server.py)
+**3. Testing server (Protocol = STDIO)**
 
 ```bash
-python mcp_client.py
+$ mcp dev mcp_server_stdio.py
+
+# You'll see sth like below, head to the url and you can test the available tools, resources, prompts we implemented.
+Starting MCP inspector...
+⚙️ Proxy server listening on port 6277
+🔍 MCP Inspector is up and running at http://127.0.0.1:6274 🚀
+```
+
+**4. Testing server (Protocol = SSE)**
+
+```bash
+# Running the MCP SSE Server
+$ python mcp_server_sse.py
+# Run MCP Inspector
+$ mcp dev mcp_server_sse.py
+
+# You'll see sth like below, head to the url and you can test the available tools, resources, prompts we implemented.
+Starting MCP inspector...
+⚙️ Proxy server listening on port 6277
+🔍 MCP Inspector is up and running at http://127.0.0.1:6274 🚀
+
+# In case the Inspector connection setting is mixed up with the previous STDIO protocol.
+In the MCP Inspector page, set:
+Transport Type = 'SSE'
+URL = 'http://127.0.0.1:6270/sse'
+```
+
+
+
+**5. Run a simple client code that connect to our MCP server created at [server.py](server.py)**
+
+```bash
+$ python mcp_client.py
 
 # Output
 Tool name: "greet_tool"
@@ -28,15 +60,15 @@ Tool description: "
 ```
 
 
-4. Run a simple Chat Agent code provided my `smolagents` package
+**6. Run a simple Chat Agent code provided my `smolagents` package**
 
 ```bash
 # Create a .env file and add a huggingface token
-touch .env
-echo HF_TOKEN=<your_huggingface_token> > .env
+$ touch .env
+$ echo HF_TOKEN=<your_huggingface_token> > .env
 
 # run
-python mcp_chat_agent.py
+$ python mcp_chat_agent.py
 ```
 
 Output:
