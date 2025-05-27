@@ -10,7 +10,7 @@ HF_TOKEN = os.getenv("HF_TOKEN")
 
 model = InferenceClientModel(token=HF_TOKEN)
 
-server_parameters = StdioServerParameters(command="uv", args=["run", "server.py"])
+server_parameters = StdioServerParameters(command="uv", args=["run", "mcp_server_stdio.py"])
 
 with ToolCollection.from_mcp(
     server_parameters, trust_remote_code=True

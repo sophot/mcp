@@ -5,6 +5,7 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
+    "gradio>=5.31.0",
     "mcp[cli]>=1.9.0",
-    "smolagents[mcp]>=1.16.1",
+    "smolagents[mcp,transformers]>=1.16.1",
 ]
