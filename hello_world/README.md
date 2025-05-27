@@ -87,4 +87,4 @@ $ echo HF_TOKEN=<your_huggingface_token> > .env
 $ python 3_gradio_app.py
 ```
 Output:
-![output_chatbot_demo_img](imgs/out_demo2.png)
+<img src="imgs/out_demo2.png" alt="output_chatbot_demo_img" style="border: 2px solid #ccc; border-radius: 8px; padding: 4px;" />
