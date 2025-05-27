@@ -3,8 +3,8 @@ from smolagents.mcp_client import MCPClient
 from mcp.client.stdio import StdioServerParameters
 
 server_params = [
-    StdioServerParameters(command="uv", args=["run", "mcp_server_stdio.py"]),
-    StdioServerParameters(command="uv", args=["run", "mcp_server_stdio.py"])
+    StdioServerParameters(command="uv", args=["run", "server/mcp_server_stdio.py"]),
+    StdioServerParameters(command="uv", args=["run", "server/mcp_server_stdio.py"])
 ]
 
 mcp_client = MCPClient(server_params)

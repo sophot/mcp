@@ -2,19 +2,19 @@
 
 This repository is a collection of what I learn about MCP and my [notes (notion)](https://www.notion.so/sophot/MCP-1f8c90c362f480a998accda61a33297d?pvs=4).
 
-1. Clone the repository
+**1. Clone the repository**
 
 ```
 git clone https://github.com/sophot/mcp.git
 ```
 
-2. Each folder is a separate project. Navigate to any folder to see what it's doing
+**2. Each folder is a separate project. Navigate to any folder to see what it's doing**
 
 ```
 cd hello_wold
 ```
 
-3. Follow the Readme in each project folder.
+**3. Follow the Readme in each project folder.**
 
 
 <hr />

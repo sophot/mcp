@@ -7,7 +7,7 @@ from smolagents.models import TransformersModel
 import os
 from dotenv import load_dotenv
 
-server_parameters = StdioServerParameters(command="uv", args=["run", "mcp_server_stdio.py"])
+server_parameters = StdioServerParameters(command="uv", args=["run", "server/mcp_server_stdio.py"])
 
 
 mcp_client = MCPClient(
@@ -23,7 +23,6 @@ try:
     if not api:
         model = TransformersModel(
                 model_id="Qwen/Qwen2.5-Coder-3B-Instruct",
-        #        device="cuda"
             )
     else:
         load_dotenv()

@@ -12,9 +12,10 @@ $ source .venv/bin/activate
 ```
 
 **3. Testing server (Protocol = STDIO)**
+If `node.js` is not installed, go ahead and install it at https://nodejs.org/en/download.
 
 ```bash
-$ mcp dev mcp_server_stdio.py
+$ mcp dev server/mcp_server_stdio.py
 
 # You'll see sth like below, head to the url and you can test the available tools, resources, prompts we implemented.
 Starting MCP inspector...
@@ -26,9 +27,9 @@ Starting MCP inspector...
 
 ```bash
 # Running the MCP SSE Server
-$ python mcp_server_sse.py
+$ python server/mcp_server_sse.py
 # Run MCP Inspector
-$ mcp dev mcp_server_sse.py
+$ mcp dev servermcp_server_sse.py
 
 # You'll see sth like below, head to the url and you can test the available tools, resources, prompts we implemented.
 Starting MCP inspector...
@@ -46,7 +47,7 @@ URL = 'http://127.0.0.1:6270/sse'
 **5. Run a simple client code that connect to our MCP server created at [server.py](server.py)**
 
 ```bash
-$ python mcp_client.py
+$ python 1_mcp_client.py
 
 # Output
 Tool name: "greet_tool"
@@ -68,8 +69,22 @@ $ touch .env
 $ echo HF_TOKEN=<your_huggingface_token> > .env
 
 # run
-$ python mcp_chat_agent.py
+$ python 2_mcp_chat_agent.py
 ```
 
 Output:
-![output_img](imgs/out_demo1.png)
+![output_agent_demo_img](imgs/out_demo1.png)
+
+
+**7. Run a gradio chatbot app that executes on MCP tools**
+
+```bash
+# Create a .env file and add a huggingface token
+$ touch .env
+$ echo HF_TOKEN=<your_huggingface_token> > .env
+
+# run
+$ python 3_gradio_app.py
+```
+Output:
+![output_chatbot_demo_img](imgs/out_demo2.png)
