@@ -52,45 +52,47 @@ I'm trying to answer these question.
 <br />
 
 3. **Question:** So the MCP Host have LLM, rule base code in it?
-**(2025/05/28) Answer:** Yes!!
-**LLM Integration**
-Most MCP Hosts have an LLM integrated within them (or access to one via API). This LLM serves multiple purposes:
-   * **Tool Selection**: The LLM helps decide which MCP servers/tools to invoke based on the user's query. For example, it might receive a prompt like:
-      ```bash
-      Available tools: file_reader, weather_api, database_query
-      User query: "Show me the sales data from last month"
-      Which tools should I use?
-      ```
-
-   * **Parameter Extraction**: The LLM generates structured function calls with proper parameters:
-      ```bash
-      User: "What's the temperature in San Francisco?"
-      LLM generates: weather_api(location="San Francisco", metric="temperature")
-      ```
-
-   * **Response Synthesis**: After gathering data from MCP servers, the LLM combines everything into a coherent response.
-
-   **Rule-Based Code**
-The Host also contains traditional programming logic for:
-
-   * **Query Routing**: Pattern matching and keyword detection to quickly identify obvious tool needs
-      ```python
-      if "weather" in query.lower():
-         candidate_tools.append("weather_api")
-      ```
-
-   * **Parameter Validation**: Ensuring extracted parameters meet tool requirements before making calls
-
-   * **Error Handling**: Managing timeouts, failed tool calls, and fallback strategies
-
-   * **Security & Access Control**: Determining which tools a user can access
-
-   * **Orchestration Logic**: Managing the sequence of tool calls, caching, and response formatting
-
-   **Hybrid Approach**
-The most sophisticated MCP Hosts use both approaches together:
-   - Rule-based systems handle straightforward, deterministic routing
-   - LLMs handle complex reasoning, ambiguous queries, and natural language processing
-   - Rules provide guardrails and efficiency while LLMs provide flexibility and intelligence
-
-   This hybrid architecture allows MCP Hosts to be both fast (rules) and smart (LLM) in determining how to best serve each user query.
+   
+   **(2025/05/28) Answer:** Yes!!
+   
+   **LLM Integration**
+   Most MCP Hosts have an LLM integrated within them (or access to one via API). This LLM serves multiple purposes:
+      * **Tool Selection**: The LLM helps decide which MCP servers/tools to invoke based on the user's query. For example, it might receive a prompt like:
+         ```bash
+         Available tools: file_reader, weather_api, database_query
+         User query: "Show me the sales data from last month"
+         Which tools should I use?
+         ```
+   
+      * **Parameter Extraction**: The LLM generates structured function calls with proper parameters:
+         ```bash
+         User: "What's the temperature in San Francisco?"
+         LLM generates: weather_api(location="San Francisco", metric="temperature")
+         ```
+   
+      * **Response Synthesis**: After gathering data from MCP servers, the LLM combines everything into a coherent response.
+   
+      **Rule-Based Code**
+   The Host also contains traditional programming logic for:
+   
+      * **Query Routing**: Pattern matching and keyword detection to quickly identify obvious tool needs
+         ```python
+         if "weather" in query.lower():
+            candidate_tools.append("weather_api")
+         ```
+   
+      * **Parameter Validation**: Ensuring extracted parameters meet tool requirements before making calls
+   
+      * **Error Handling**: Managing timeouts, failed tool calls, and fallback strategies
+   
+      * **Security & Access Control**: Determining which tools a user can access
+   
+      * **Orchestration Logic**: Managing the sequence of tool calls, caching, and response formatting
+   
+      **Hybrid Approach**
+   The most sophisticated MCP Hosts use both approaches together:
+      - Rule-based systems handle straightforward, deterministic routing
+      - LLMs handle complex reasoning, ambiguous queries, and natural language processing
+      - Rules provide guardrails and efficiency while LLMs provide flexibility and intelligence
+   
+      This hybrid architecture allows MCP Hosts to be both fast (rules) and smart (LLM) in determining how to best serve each user query.
