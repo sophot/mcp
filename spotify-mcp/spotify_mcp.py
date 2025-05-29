@@ -353,7 +353,7 @@ async def handle_call_tool(
         )]
 
 
-async def main():
+async def run_server():
     try:
         async with mcp.server.stdio.stdio_server() as (read_stream, write_stream):
             await server.run(
@@ -364,6 +364,7 @@ async def main():
     except Exception as e:
         logger.error(f"Server error occurred: {str(e)}")
         raise
-
-if __name__ == "__main__":
-    main()
+    
+def main():
+    asyncio.run(run_server())
+    
