@@ -1,4 +1,4 @@
-## YouTube MCP Server
+## Spotify MCP Server
 **WATCH DEMO: https://youtu.be/fNikzrT-UG4**
 
 MCP project to connect Claude with Spotify. Built on top of [spotipy-dev's API](https://github.com/spotipy-dev/spotipy/tree/2.24.0).
