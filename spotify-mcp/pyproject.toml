@@ -22,7 +22,10 @@ dev = [
 ]
 
 [tool.uv.sources]
-spotify-mcp = { workspace = true }
+src = { path = "src" }
+
+[tool.hatch.build.targets.wheel]
+include = ["src/spotify_mcp.py"]
 
 [project.scripts]
-spotify-mcp = "spotify_mcp:main"
+spotify-mcp = "src.spotify_mcp:main"

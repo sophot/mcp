@@ -15,8 +15,8 @@ import mcp.server.stdio
 from pydantic import BaseModel, Field, AnyUrl
 from spotipy import SpotifyException
 
-import spotify_api
-from utils import normalize_redirect_uri
+from . import spotify_api
+from .utils import normalize_redirect_uri
 
 
 def setup_logger():
@@ -351,7 +351,6 @@ async def handle_call_tool(
             type="text",
             text=error_msg
         )]
-
 
 async def run_server():
     try:

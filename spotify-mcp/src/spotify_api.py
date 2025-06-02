@@ -7,7 +7,7 @@ from dotenv import load_dotenv
 from spotipy.cache_handler import CacheFileHandler
 from spotipy.oauth2 import SpotifyOAuth
 
-import utils
+from . import utils
 
 load_dotenv()
 
