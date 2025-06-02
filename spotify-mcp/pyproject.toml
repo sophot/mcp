@@ -25,7 +25,7 @@ dev = [
 src = { path = "src" }
 
 [tool.hatch.build.targets.wheel]
-include = ["src/spotify_mcp.py"]
+include = ["src/spotify_fastmcp.py"]
 
 [project.scripts]
-spotify-mcp = "src.spotify_mcp:main"
+spotify-mcp = "src.spotify_fastmcp:main"
