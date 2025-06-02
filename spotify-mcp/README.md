@@ -3,6 +3,7 @@
 
 MCP project to connect Claude with Spotify. Built on top of [spotipy-dev's API](https://github.com/spotipy-dev/spotipy/tree/2.24.0).
 Forked from https://github.com/varunneal/spotify-mcp
+Update the code base to newer version which is faster to implement and as seen in Anthropic's examples. (MCP -> FastMCP)
 
 **Features**
 
